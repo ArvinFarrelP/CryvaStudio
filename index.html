@@ -5,9 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryvaStudio - Anime Productivity Tools</title>
     <meta name="description" content="CryvaStudio - Beautiful anime-themed productivity tools including todo lists, pomodoro timers, and habit trackers">
-    <meta property="og:title" content="CryvaStudio - Anime Productivity Tools">
-    <meta property="og:description" content="Transform your workflow with anime-inspired productivity websites">
+    
+    <!-- Enhanced OG Tags -->
+    <meta property="og:title" content="CryvaStudio - Anime-Themed Productivity Tools">
+    <meta property="og:description" content="Transform your workflow with beautiful anime-inspired productivity tools. Pomodoro timers, todo lists, and habit trackers with kawaii design.">
     <meta property="og:image" content="./assets/images/og-image.jpg">
+    <meta property="og:url" content="https://cryvastudio.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CryvaStudio">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="CryvaStudio - Anime Productivity Tools">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CryvaStudio - Anime Productivity Tools">
+    <meta name="twitter:description" content="Beautiful anime-themed productivity tools for creators and dreamers">
+    <meta name="twitter:image" content="./assets/images/og-image.jpg">
+    <meta name="twitter:site" content="@cryvastudio">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#00bfff">
+    <meta name="msapplication-TileColor" content="#00bfff">
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -485,7 +505,7 @@
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
-        /* Image fallback styling */
+        /* Enhanced Image fallback styling */
         .image-fallback {
             background: linear-gradient(135deg, #00bfff 0%, #1a1a2e 100%);
             display: flex;
@@ -493,6 +513,41 @@
             justify-content: center;
             color: white;
             font-weight: bold;
+            min-height: 200px;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .image-fallback::before {
+            content: "🎨";
+            font-size: 2rem;
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #00bfff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Pulse animation for CTA */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse-btn {
+            animation: pulse 2s infinite;
         }
 
         /* Responsive adjustments */
@@ -709,16 +764,17 @@
                 <p class="text-xl text-gray-600">
                     Transform your workflow with beautiful, anime-inspired productivity websites designed for creators and dreamers.
                 </p>
-                <a href="#products" class="inline-block px-8 py-4 bg-[#00bfff] text-black font-semibold rounded-full glow-btn">
+                <a href="#products" class="inline-block px-8 py-4 bg-[#00bfff] text-black font-semibold rounded-full glow-btn pulse-btn">
                     Explore Products
                 </a>
             </div>
             <div class="fade-in floating">
                 <div class="relative">
                     <div class="absolute inset-0 bg-[#00bfff] rounded-3xl opacity-20 blur-3xl"></div>
-                    <img src="./assets/images/hero-image.png" alt="CryvaStudio - Anime character using productivity tools on a laptop" 
+                    <!-- Using existing image that we know works -->
+                    <img src="./assets/images/hero-image.png" alt="CryvaStudio - Anime character using productivity tools" 
                          class="relative rounded-3xl glow-border w-full h-64 md:h-96 object-cover image-fallback"
-                         onerror="this.onerror=null; this.classList.add('image-fallback'); this.alt='Hero Image'; this.style.display='flex'; this.innerHTML='<div>Hero Image</div>';"
+                         onerror="handleImageError(this)"
                          loading="lazy">
                 </div>
             </div>
@@ -739,7 +795,7 @@
                     <div class="relative mb-6 overflow-hidden rounded-lg">
                         <img src="./assets/images/Arona_and_Plana.jpg" alt="Anime Pomodoro Timer - Focus timer with anime characters and motivational quotes" 
                              class="w-full h-48 object-cover image-fallback"
-                             onerror="this.onerror=null; this.classList.add('image-fallback'); this.alt='Pomodoro Timer'; this.style.display='flex'; this.innerHTML='<div>Pomodoro Image</div>';"
+                             onerror="handleImageError(this)"
                              loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#00bfff]/30 to-transparent"></div>
                     </div>
@@ -756,7 +812,7 @@
                     <div class="relative mb-6 overflow-hidden rounded-lg">
                         <img src="./assets/images/Hikari_and_Nozomi.jpg" alt="Anime Pomodoro Hikari & Nozomi Edition - Special edition with Hikari and Nozomi characters" 
                              class="w-full h-48 object-cover image-fallback"
-                             onerror="this.onerror=null; this.classList.add('image-fallback'); this.alt='Pomodoro Hikari & Nozomi Edition'; this.style.display='flex'; this.innerHTML='<div>Pomodoro Hikari & Nozomi Edition</div>';"
+                             onerror="handleImageError(this)"
                              loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#00bfff]/30 to-transparent"></div>
                     </div>
@@ -773,7 +829,7 @@
                     <div class="relative mb-6 overflow-hidden rounded-lg">
                         <img src="./assets/images/coming-soon.png" alt="Kawaii Todo List - Anime-themed task management application" 
                              class="w-full h-48 object-cover image-fallback"
-                             onerror="this.onerror=null; this.classList.add('image-fallback'); this.alt='Todo App'; this.style.display='flex'; this.innerHTML='<div>Todo App Image</div>';"
+                             onerror="handleImageError(this)"
                              loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#00bfff]/30 to-transparent"></div>
                     </div>
@@ -790,7 +846,7 @@
                     <div class="relative mb-6 overflow-hidden rounded-lg">
                         <img src="./assets/images/coming-soon.png" alt="Sakura Habit Tracker - Beautiful habit tracking application with cherry blossom animations" 
                              class="w-full h-48 object-cover image-fallback"
-                             onerror="this.onerror=null; this.classList.add('image-fallback'); this.alt='Habit Tracker'; this.style.display='flex'; this.innerHTML='<div>Habit Tracker Image</div>';"
+                             onerror="handleImageError(this)"
                              loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#00bfff]/30 to-transparent"></div>
                     </div>
@@ -929,7 +985,140 @@
         </div>
     </div>
 
+    <!-- OG Image Generator Canvas (Hidden) -->
+    <canvas id="og-canvas" width="1200" height="630" style="display:none;"></canvas>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CryvaStudio",
+        "description": "Anime-themed productivity tools including pomodoro timers, todo lists, and habit trackers",
+        "url": "https://cryvastudio.com",
+        "logo": "./assets/images/Arona_and_Plana.jpg",
+        "sameAs": [
+            "https://instagram.com/cryvastudio"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+62-812-3305-3366",
+            "contactType": "Customer Service",
+            "areaServed": "ID",
+            "availableLanguage": ["Indonesian", "English"]
+        }
+    }
+    </script>
+
     <script>
+        // Enhanced Image Error Handling
+        function handleImageError(img) {
+            if (!img.classList.contains('image-fallback')) {
+                img.classList.add('image-fallback');
+                img.alt = 'Image not available';
+                img.style.display = 'flex';
+                img.innerHTML = '<div>Image Loading Failed</div>';
+            }
+        }
+
+        // Enhanced Image Preloading and Validation
+        function enhanceImageHandling() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                // Add loading state
+                if (!img.complete) {
+                    img.style.opacity = '0.7';
+                }
+                
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                    this.classList.remove('image-fallback');
+                });
+                
+                img.addEventListener('error', function() {
+                    handleImageError(this);
+                });
+            });
+        }
+
+        // AUTO-GENERATE OG IMAGE FUNCTION
+        function generateOGImage() {
+            const canvas = document.getElementById('og-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient (matching website theme)
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#00bfff');
+            gradient.addColorStop(1, '#1a1a2e');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+            
+            // Add decorative elements
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            for (let i = 0; i < 5; i++) {
+                ctx.beginPath();
+                ctx.arc(100 + i * 250, 150, 40, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            // Main Title
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 72px "Poppins", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('CryvaStudio', 600, 280);
+            
+            // Subtitle
+            ctx.font = '36px "Poppins", sans-serif';
+            ctx.fillText('Anime-Themed Productivity Tools', 600, 350);
+            
+            // Decorative line
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(400, 400);
+            ctx.lineTo(800, 400);
+            ctx.stroke();
+            
+            // Website URL
+            ctx.font = '24px "Poppins", sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fillText('cryvastudio.com', 600, 450);
+            
+            // Feature text
+            ctx.font = '20px "Poppins", sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.fillText('Pomodoro Timers • Todo Lists • Habit Trackers', 600, 500);
+            
+            // Convert to data URL and set as OG image
+            const dataURL = canvas.toDataURL('image/jpeg');
+            
+            // Update all OG image meta tags
+            const ogImageMeta = document.querySelector('meta[property="og:image"]');
+            const twitterImageMeta = document.querySelector('meta[name="twitter:image"]');
+            
+            if (ogImageMeta) ogImageMeta.content = dataURL;
+            if (twitterImageMeta) twitterImageMeta.content = dataURL;
+            
+            console.log('✅ OG Image generated automatically!');
+        }
+
+        // OG Image Fallback System
+        function checkOGImage() {
+            const ogImage = document.querySelector('meta[property="og:image"]');
+            if (ogImage && ogImage.content.includes('./assets/images/og-image.jpg')) {
+                const testImage = new Image();
+                testImage.onerror = function() {
+                    // If OG image doesn't exist, generate one automatically
+                    console.log('🔄 OG image not found, generating automatically...');
+                    generateOGImage();
+                };
+                testImage.onload = function() {
+                    console.log('✅ OG image found and loaded');
+                };
+                testImage.src = ogImage.content;
+            }
+        }
+
         // Scroll Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1036,7 +1225,7 @@
                 description: "Focus better with anime-styled timers and motivational quotes. Transform your work sessions into engaging anime adventures.",
                 price: "Rp 39.000",
                 images: [
-                    "./assets/images/pomodoro-timer.png",
+                    "./assets/images/Arona_and_Plana.jpg",
                     "./assets/images/screenshots/Screenshot1.png",
                     "./assets/images/screenshots/Screenshot2.png",
                     "./assets/images/screenshots/Screenshot3.png",
@@ -1059,7 +1248,7 @@
                 description: "Special edition featuring Hikari and Nozomi characters for enhanced focus sessions. Experience the ultimate anime productivity companion with exclusive character interactions.",
                 price: "Rp 49.000",
                 images: [
-                    "./assets/images/pomodoro-timer1.jpg",
+                    "./assets/images/Hikari_and_Nozomi.jpg",
                     "./assets/images/coming-soon.png",
                     "./assets/images/coming-soon.png"
                 ],
@@ -1119,7 +1308,7 @@
                 slide.className = 'slider-slide';
                 slide.innerHTML = `
                     <img src="${image}" alt="Product Image ${index + 1}" 
-                         onerror="this.onerror=null; this.classList.add('image-fallback'); this.style.display='flex'; this.innerHTML='<div>Product Image ${index + 1}</div>';">
+                         onerror="handleImageError(this)">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 `;
                 sliderTrack.appendChild(slide);
@@ -1236,16 +1425,25 @@
         imageSlider.addEventListener('mouseenter', stopAutoSlide);
         imageSlider.addEventListener('mouseleave', startAutoSlide);
 
-        // Image error handling
+        // Initialize enhanced features when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.addEventListener('error', function() {
-                    this.classList.add('image-fallback');
-                    this.style.display = 'flex';
-                    this.innerHTML = '<div>' + (this.alt || 'Image') + '</div>';
+            enhanceImageHandling();
+            checkOGImage(); // Check and auto-generate OG image if needed
+            
+            // Add loading state to buttons
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.classList.contains('product-details') || this.id === 'modal-buy') {
+                        this.classList.add('loading-spinner');
+                        setTimeout(() => {
+                            this.classList.remove('loading-spinner');
+                        }, 1000);
+                    }
                 });
             });
+            
+            console.log('🚀 CryvaStudio website loaded successfully!');
+            console.log('✨ Features: Auto OG Image, Enhanced Error Handling, Smooth Animations');
         });
     </script>
 </body>
