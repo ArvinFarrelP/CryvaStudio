@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 <title>CipherVision Labs - Cryptanalysis Tool for Windows</title>
 <meta name="description" content="Download CipherVision Labs - Free cryptanalysis tool for classical cipher decryption. Frequency analysis, Caesar solver, manual cipher mapping.">
 <meta name="author" content="Arvin Farrel Pramuditya">
@@ -33,7 +33,7 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(10,12,16,0.9);
+  background: rgba(10,12,16,0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 16px 0;
@@ -44,11 +44,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .logo {
   font-size: 1.25rem;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .logo span {
@@ -57,7 +60,8 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -66,6 +70,7 @@ body {
   font-size: 0.875rem;
   font-weight: 500;
   transition: color 0.2s;
+  padding: 4px 0;
 }
 
 .nav-links a:hover {
@@ -74,7 +79,7 @@ body {
 
 /* Hero */
 .hero {
-  padding: 80px 0 64px;
+  padding: 60px 0 50px;
   text-align: center;
 }
 
@@ -82,19 +87,20 @@ body {
   display: inline-block;
   background: rgba(56,189,248,0.12);
   border: 1px solid rgba(56,189,248,0.2);
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 100px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: #38bdf8;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 8vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
 
 h1 span {
@@ -105,31 +111,34 @@ h1 span {
 }
 
 .subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.9rem, 4vw, 1.125rem);
   color: #94a3b8;
   max-width: 600px;
-  margin: 0 auto 32px;
+  margin: 0 auto 28px;
+  padding: 0 16px;
 }
 
 /* Buttons */
 .buttons {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
+  padding: 0 16px;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 28px;
+  padding: 10px 20px;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   text-decoration: none;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -157,44 +166,46 @@ h1 span {
 .stats {
   display: flex;
   justify-content: center;
-  gap: 48px;
-  padding-top: 24px;
+  gap: 32px;
+  padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.08);
   margin-top: 16px;
+  flex-wrap: wrap;
 }
 
 .stat {
   text-align: center;
+  min-width: 70px;
 }
 
 .stat-value {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #38bdf8;
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #64748b;
 }
 
 /* Installation */
 .installation {
-  padding: 64px 0;
+  padding: 50px 0;
 }
 
 .section-title {
   text-align: center;
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 6vw, 1.75rem);
   font-weight: 700;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
-/* Code Block Style seperti versi kedua */
+/* Code Block Style */
 .code-block {
   background: #080d18;
   border: 1px solid rgba(0,245,255,0.12);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -204,14 +215,16 @@ h1 span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.65rem 1rem;
+  padding: 0.5rem 1rem;
   background: rgba(0,245,255,0.04);
   border-bottom: 1px solid rgba(0,245,255,0.12);
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .code-lang {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #00f5ff;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -233,15 +246,22 @@ h1 span {
 .code-dot.g { background: #28c840; }
 
 pre {
-  padding: 1.2rem 1.3rem;
+  padding: 1rem;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #a5b4fc;
-  line-height: 1.8;
+  line-height: 1.7;
   overflow-x: auto;
   margin: 0;
   white-space: pre-wrap;
-  word-break: break-all;
+  word-break: break-word;
+}
+
+@media (min-width: 640px) {
+  pre {
+    font-size: 0.8rem;
+    padding: 1.2rem 1.3rem;
+  }
 }
 
 pre .comment { color: #64748b; }
@@ -254,19 +274,28 @@ pre .output { color: #fbbf24; }
 .sample-cipher {
   background: #080d18;
   border: 1px solid rgba(0,245,255,0.12);
-  border-radius: 8px;
-  padding: 1.3rem 1.5rem;
+  border-radius: 12px;
+  padding: 1rem;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
+  font-size: 0.7rem;
   color: #00f5ff;
-  line-height: 2;
+  line-height: 1.8;
   letter-spacing: 0.02em;
   margin-top: 1rem;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+@media (min-width: 640px) {
+  .sample-cipher {
+    font-size: 0.82rem;
+    padding: 1.3rem 1.5rem;
+  }
 }
 
 .section-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #b042ff;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -275,6 +304,7 @@ pre .output { color: #fbbf24; }
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .section-label::after {
@@ -282,52 +312,159 @@ pre .output { color: #fbbf24; }
   flex: 1;
   height: 1px;
   background: rgba(0,245,255,0.12);
+  min-width: 40px;
 }
 
 /* CTA */
 .cta {
-  padding: 64px 0;
+  padding: 50px 0;
   text-align: center;
   background: #0e1015;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .cta h2 {
-  font-size: 1.75rem;
+  font-size: clamp(1.3rem, 6vw, 1.75rem);
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  padding: 0 16px;
 }
 
 .cta p {
   color: #94a3b8;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+  padding: 0 16px;
+}
+
+.cta .btn {
+  white-space: normal;
+  word-break: keep-all;
 }
 
 /* Footer */
 footer {
-  padding: 32px 0;
+  padding: 24px 0;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #64748b;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
+footer .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
   }
   
   .navbar .container {
     flex-direction: column;
-    gap: 12px;
+    text-align: center;
   }
   
   .nav-links {
+    justify-content: center;
     gap: 16px;
   }
   
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn {
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+  
   .stats {
-    gap: 24px;
+    gap: 20px;
+  }
+  
+  .stat {
+    min-width: 60px;
+  }
+  
+  .stat-value {
+    font-size: 1.1rem;
+  }
+  
+  .stat-label {
+    font-size: 0.65rem;
+  }
+  
+  .code-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 0 35px;
+  }
+  
+  .installation {
+    padding: 35px 0;
+  }
+  
+  .section-title {
+    margin-bottom: 30px;
+  }
+  
+  .stats {
+    gap: 16px;
+  }
+  
+  .stat {
+    min-width: 55px;
+  }
+  
+  pre {
+    font-size: 0.65rem;
+    padding: 0.8rem;
+  }
+  
+  .sample-cipher {
+    font-size: 0.65rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-links {
+    gap: 12px;
+  }
+  
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+  
+  .badge {
+    font-size: 0.65rem;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+  }
+  
+  .stat {
+    min-width: 50px;
+  }
+  
+  .stat-value {
+    font-size: 1rem;
+  }
+  
+  .stat-label {
+    font-size: 0.6rem;
   }
 }
 </style>
@@ -352,11 +489,11 @@ footer {
     <p class="subtitle">A complete cryptanalysis tool for Windows — frequency analysis, Caesar brute force, and manual cipher mapping.</p>
     <div class="buttons">
       <a href="https://github.com/ArvinFarrelP/CipherVision/releases/tag/v1.0.0" target="_blank" class="btn btn-primary">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.97a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.779a.749.749 0 1 1 1.06-1.06l1.97 1.97Z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.97a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.779a.749.749 0 1 1 1.06-1.06l1.97 1.97Z"/></svg>
         Download for Windows
       </a>
       <a href="https://github.com/ArvinFarrelP/CipherVision" target="_blank" class="btn btn-secondary">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         View Source
       </a>
     </div>
@@ -381,7 +518,6 @@ footer {
   <div class="container">
     <h2 class="section-title">Installation & Usage</h2>
 
-    <!-- INSTALLATION CODE BLOCK -->
     <div class="code-block">
       <div class="code-header">
         <div class="code-dots"><div class="code-dot r"></div><div class="code-dot y"></div><div class="code-dot g"></div></div>
@@ -391,7 +527,6 @@ footer {
 <span class="cmd">pip</span> <span class="arg">install</span> <span class="str">matplotlib numpy ttkbootstrap</span></pre>
     </div>
 
-    <!-- BUILD CODE BLOCK -->
     <div class="code-block">
       <div class="code-header">
         <div class="code-dots"><div class="code-dot r"></div><div class="code-dot y"></div><div class="code-dot g"></div></div>
@@ -413,7 +548,6 @@ footer {
 <span class="output">dist/frequency_analysis.exe</span></pre>
     </div>
 
-    <!-- USAGE CODE BLOCK -->
     <div class="code-block">
       <div class="code-header">
         <div class="code-dots"><div class="code-dot r"></div><div class="code-dot y"></div><div class="code-dot g"></div></div>
@@ -426,7 +560,6 @@ footer {
 <span class="cmd">python</span> <span class="arg">frequency_analysis.py</span></pre>
     </div>
 
-    <!-- SAMPLE INPUT -->
     <div class="section-label">Sample Input</div>
     <div class="sample-cipher">
       THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.<br>
@@ -441,7 +574,7 @@ footer {
     <h2>Ready to start decrypting?</h2>
     <p>Free, open source, and runs entirely offline.</p>
     <a href="https://github.com/ArvinFarrelP/CipherVision/releases/tag/v1.0.0" target="_blank" class="btn btn-primary">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.97a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.779a.749.749 0 1 1 1.06-1.06l1.97 1.97Z"/></svg>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.97a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.779a.749.749 0 1 1 1.06-1.06l1.97 1.97Z"/></svg>
       Download CipherVision v1.0.0
     </a>
   </div>
