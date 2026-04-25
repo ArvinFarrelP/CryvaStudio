@@ -3,9 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>CipherVision Labs — Cryptanalysis Tool for Windows</title>
-<meta name="description" content="Download CipherVision Labs - Free cryptanalysis tool for classical cipher decryption. Frequency analysis, Caesar solver, manual cipher mapping.">
+<title>CipherVision Labs — Professional Cryptanalysis Tool for Windows</title>
+<meta name="description" content="CipherVision Labs - A professional cryptanalysis toolkit for frequency analysis, Caesar cipher brute force, and manual substitution cipher mapping. Free and open source.">
+<meta name="keywords" content="cryptanalysis tool, frequency analysis cipher, caesar cipher solver, substitution cipher decoder, cipher visualization, cryptanalysis software, ciphervision">
 <meta name="author" content="Arvin Farrel Pramuditya">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="CipherVision Labs — Professional Cryptanalysis Toolkit">
+<meta property="og:description" content="A professional cryptanalysis tool for frequency analysis, Caesar brute force, and manual cipher mapping. Built for researchers, students, and CTF players.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ciphervisionlabs.dpdns.org">
+<meta property="og:image" content="https://ciphervisionlabs.dpdns.org/og-image.png">
+<meta property="og:site_name" content="CipherVision Labs">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CipherVision Labs — Cryptanalysis Toolkit">
+<meta name="twitter:description" content="Professional cryptanalysis tool for Windows. Frequency analysis, Caesar brute force, manual cipher mapping.">
+<meta name="twitter:image" content="https://ciphervisionlabs.dpdns.org/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -188,7 +205,7 @@ h1 span {
 .subtitle {
   font-size: clamp(0.95rem, 4vw, 1.1rem);
   color: #94a3b8;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto 32px;
   padding: 0 16px;
   line-height: 1.7;
@@ -278,10 +295,231 @@ h1 span {
   text-transform: uppercase;
 }
 
+/* Features Section */
+.features {
+  padding: 60px 0;
+  background: linear-gradient(180deg, rgba(56,189,248,0.02) 0%, transparent 100%);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(56,189,248,0.1);
+  border-radius: 20px;
+  padding: 28px 24px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56,189,248,0.3);
+  box-shadow: 0 20px 35px -15px rgba(56,189,248,0.15);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(129,140,248,0.1));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.feature-card p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Preview Section */
+.preview {
+  padding: 60px 0;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 48px;
+}
+
+.preview-card {
+  background: linear-gradient(135deg, #0e1220 0%, #0a0f1a 100%);
+  border: 1px solid rgba(56,189,248,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.preview-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56,189,248,0.3);
+  box-shadow: 0 20px 35px -15px rgba(56,189,248,0.2);
+}
+
+.preview-image {
+  height: 200px;
+  background: linear-gradient(135deg, #1a1f2e, #0f1420);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(129,140,248,0.05));
+}
+
+.preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.preview-card:hover .preview-image img {
+  transform: scale(1.05);
+}
+
+.preview-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 2.5rem;
+  color: #38bdf8;
+  position: relative;
+  z-index: 1;
+}
+
+.preview-placeholder span {
+  font-size: 0.7rem;
+  color: #64748b;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.preview-caption {
+  padding: 16px 20px 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  border-top: 1px solid rgba(56,189,248,0.08);
+}
+
+/* Use Cases Section */
+.usecases {
+  padding: 60px 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(56,189,248,0.02) 100%);
+}
+
+.usecases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.usecase-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(56,189,248,0.1);
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.usecase-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56,189,248,0.3);
+  background: rgba(56,189,248,0.03);
+}
+
+.usecase-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(129,140,248,0.08));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+}
+
+.usecase-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.usecase-card p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* About Section */
+.about-lab {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.about-lab-content {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(56,189,248,0.1);
+  border-radius: 24px;
+  padding: 48px 32px;
+}
+
+.about-lab-content h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-lab-content p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
 /* Installation Section */
 .installation {
   padding: 60px 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(56,189,248,0.02) 100%);
 }
 
 .section-title {
@@ -309,6 +547,7 @@ h1 span {
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
 }
 
 .code-block:hover {
@@ -355,6 +594,46 @@ h1 span {
 
 .code-dot:hover {
   transform: scale(1.2);
+}
+
+.copy-btn {
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.2);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #60a5fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.copy-btn:hover {
+  background: rgba(56,189,248,0.2);
+  border-color: rgba(56,189,248,0.4);
+  transform: scale(1.02);
+}
+
+.copy-feedback {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  background: #34d399;
+  color: #0a0c10;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.copy-feedback.show {
+  opacity: 1;
 }
 
 pre {
@@ -523,6 +802,16 @@ footer a:hover {
     flex-direction: row;
     justify-content: space-between;
   }
+  
+  .features-grid,
+  .preview-grid,
+  .usecases-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-lab-content {
+    padding: 32px 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -550,6 +839,11 @@ footer a:hover {
   .sample-cipher {
     font-size: 0.68rem;
     padding: 0.9rem 0.9rem 0.9rem 1.8rem;
+  }
+  
+  .feature-card,
+  .usecase-card {
+    padding: 20px 18px;
   }
 }
 
@@ -579,6 +873,8 @@ footer a:hover {
   <div class="container">
     <div class="logo"><span>Cipher</span>Vision Labs</div>
     <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#preview">Preview</a>
       <a href="#install">Installation</a>
       <a href="#download">Download</a>
       <a href="https://github.com/ArvinFarrelP/CipherVision" target="_blank">GitHub</a>
@@ -590,7 +886,7 @@ footer a:hover {
   <div class="container">
     <div class="badge">Free & Open Source</div>
     <h1>Crack Classical Ciphers<br>with <span>CipherVision Labs</span></h1>
-    <p class="subtitle">A complete cryptanalysis tool for Windows — frequency analysis, Caesar brute force, and manual cipher mapping. No setup required.</p>
+    <p class="subtitle">An experimental cryptanalysis toolkit designed to analyze classical substitution ciphers using frequency distribution, brute-force techniques, and manual mapping strategies.</p>
     <div class="buttons">
       <a href="https://github.com/ArvinFarrelP/CipherVision/releases/tag/v1.0.0" target="_blank" class="btn btn-primary">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.97a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.779a.749.749 0 1 1 1.06-1.06l1.97 1.97Z"/></svg>
@@ -607,35 +903,161 @@ footer a:hover {
         <div class="stat-label">Latest Release</div>
       </div>
       <div class="stat">
-        <div class="stat-value">6</div>
-        <div class="stat-label">Features</div>
+        <div class="stat-value">Open Source</div>
+        <div class="stat-label">MIT License</div>
       </div>
       <div class="stat">
-        <div class="stat-value">MIT</div>
-        <div class="stat-label">License</div>
+        <div class="stat-value">Windows</div>
+        <div class="stat-label">Standalone</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FEATURES SECTION -->
+<section id="features" class="features">
+  <div class="container">
+    <h2 class="section-title">Powerful Features</h2>
+    <p class="section-subtitle">Everything you need to crack classical ciphers</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Frequency Analysis</h3>
+        <p>Compare letter distributions against English baselines to identify substitution patterns with statistical confidence.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Caesar Brute Force</h3>
+        <p>Test all 26 shifts automatically and rank results by confidence score. Find the correct shift in seconds.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>Manual Cipher Mapping</h3>
+        <p>Remap alphabet characters with live preview. Fine-tune your decryption hypothesis character by character.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖥️</div>
+        <h3>Standalone Windows EXE</h3>
+        <p>No Python installation required. Click and run on any Windows machine — completely self-contained.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Fully Offline</h3>
+        <p>Zero cloud dependency. Your data stays on your machine. Perfect for secure or air-gapped environments.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Visualization Tools</h3>
+        <p>Matplotlib-powered histograms and charts for visual pattern recognition and data analysis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW SECTION -->
+<section id="preview" class="preview">
+  <div class="container">
+    <h2 class="section-title">Preview</h2>
+    <p class="section-subtitle">See CipherVision in action</p>
+    <div class="preview-grid">
+      
+      <!-- Card 1 - Frequency Analysis -->
+      <div class="preview-card">
+        <div class="preview-image">
+          <img src="assets/images/frequency-analysis.png" alt="Frequency Analysis View" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="preview-placeholder" style="display: none;">
+            📊
+            <span>Frequency Analysis</span>
+          </div>
+        </div>
+        <div class="preview-caption">Frequency Analysis View — Visual comparison of letter distributions</div>
+      </div>
+      
+      <!-- Card 2 - Cipher Mapping -->
+      <div class="preview-card">
+        <div class="preview-image">
+          <img src="assets/images/cipher-mapping.png" alt="Cipher Mapping View" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="preview-placeholder" style="display: none;">
+            🔐
+            <span>Cipher Mapping</span>
+          </div>
+        </div>
+        <div class="preview-caption">Cipher Mapping Interface — Manual substitution with live preview</div>
+      </div>
+      
+      <!-- Card 3 - Histogram Charts -->
+      <div class="preview-card">
+        <div class="preview-image">
+          <img src="assets/images/histogram.png" alt="Histogram View" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="preview-placeholder" style="display: none;">
+            📈
+            <span>Histogram Charts</span>
+          </div>
+        </div>
+        <div class="preview-caption">Histogram Visualization — Matplotlib-powered statistical charts</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES SECTION -->
+<section id="usecases" class="usecases">
+  <div class="container">
+    <h2 class="section-title">Use Cases</h2>
+    <p class="section-subtitle">Who benefits from CipherVision</p>
+    <div class="usecases-grid">
+      <div class="usecase-card">
+        <div class="usecase-icon">🎓</div>
+        <h3>Cryptography Students</h3>
+        <p>Learn classical cipher analysis through hands-on experimentation. Visual feedback helps understand frequency patterns.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon">🔬</div>
+        <h3>Security Researchers</h3>
+        <p>Quickly analyze encrypted text, test hypotheses, and validate decryption approaches with statistical tools.</p>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon">🏆</div>
+        <h3>CTF Players</h3>
+        <p>Speed up your cryptanalysis workflow in capture-the-flag competitions. Solve cipher challenges faster.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT LAB SECTION -->
+<section class="about-lab">
+  <div class="container">
+    <div class="about-lab-content">
+      <h2>About <span class="gradient-text">CipherVision Labs</span></h2>
+      <p>CipherVision Labs is an experimental platform focused on applied cryptanalysis, cipher research, and visualization tools. We build open-source software that makes classical cryptography analysis accessible to students, researchers, and security enthusiasts worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALLATION SECTION -->
 <section id="install" class="installation">
   <div class="container">
     <h2 class="section-title">Installation & Usage</h2>
     <p class="section-subtitle">Get started with CipherVision in minutes</p>
 
-    <div class="code-block">
+    <div class="code-block" id="code-block-1">
       <div class="code-header">
         <div class="code-dots"><div class="code-dot r"></div><div class="code-dot y"></div><div class="code-dot g"></div></div>
         <span class="code-lang">Install Dependencies</span>
+        <button class="copy-btn" data-code="pip install matplotlib numpy ttkbootstrap">📋 Copy</button>
       </div>
       <pre><span class="comment"># Install required Python packages</span>
 <span class="cmd">pip</span> <span class="arg">install</span> <span class="str">matplotlib numpy ttkbootstrap</span></pre>
+      <div class="copy-feedback" id="feedback-1">Copied!</div>
     </div>
 
-    <div class="code-block">
+    <div class="code-block" id="code-block-2">
       <div class="code-header">
         <div class="code-dots"><div class="code-dot r"></div><div class="code-dot y"></div><div class="code-dot g"></div></div>
         <span class="code-lang">Build Executables (Windows)</span>
+        <button class="copy-btn" data-code="pip install pyinstaller&#10;python -m PyInstaller --onefile --windowed frequency_analysis.py&#10;python -m PyInstaller --onefile --windowed encrypt_text.py">📋 Copy</button>
       </div>
       <pre><span class="comment"># Install PyInstaller</span>
 <span class="cmd">pip</span> <span class="arg">install</span> <span class="str">pyinstaller</span>
@@ -651,18 +1073,21 @@ footer a:hover {
 
 <span class="comment"># Run</span>
 <span class="output">dist/frequency_analysis.exe</span></pre>
+      <div class="copy-feedback" id="feedback-2">Copied!</div>
     </div>
 
-    <div class="code-block">
+    <div class="code-block" id="code-block-3">
       <div class="code-header">
         <div class="code-dots"><div class="code-dot r"></div><div class="code-dot y"></div><div class="code-dot g"></div></div>
         <span class="code-lang">Usage from source</span>
+        <button class="copy-btn" data-code="python encrypt_text.py&#10;python frequency_analysis.py">📋 Copy</button>
       </div>
       <pre><span class="comment"># Encrypt text</span>
 <span class="cmd">python</span> <span class="arg">encrypt_text.py</span>
 
 <span class="comment"># Run frequency analysis</span>
 <span class="cmd">python</span> <span class="arg">frequency_analysis.py</span></pre>
+      <div class="copy-feedback" id="feedback-3">Copied!</div>
     </div>
 
     <div class="section-label">Sample Input</div>
@@ -674,6 +1099,7 @@ footer a:hover {
   </div>
 </section>
 
+<!-- CTA SECTION -->
 <section id="download" class="cta">
   <div class="container">
     <h2>Ready to start decrypting?</h2>
@@ -687,9 +1113,28 @@ footer a:hover {
 
 <footer>
   <div class="container">
-    <p>© 2024 CipherVision Labs by Arvin Farrel Pramuditya · <a href="https://github.com/ArvinFarrelP/CipherVision" target="_blank">GitHub</a> · MIT License</p>
+    <p>© 2024 CipherVision Labs — Applied Cryptanalysis Research · <a href="https://github.com/ArvinFarrelP/CipherVision" target="_blank">GitHub</a> · MIT License</p>
   </div>
 </footer>
+
+<script>
+// Copy button functionality
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const code = this.getAttribute('data-code');
+    const feedbackId = this.closest('.code-block').querySelector('.copy-feedback');
+    
+    navigator.clipboard.writeText(code).then(() => {
+      feedbackId.classList.add('show');
+      setTimeout(() => {
+        feedbackId.classList.remove('show');
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy:', err);
+    });
+  });
+});
+</script>
 
 </body>
 </html>
