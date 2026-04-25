@@ -921,32 +921,44 @@ footer a:hover {
     <p class="section-subtitle">Everything you need to crack classical ciphers</p>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon">
+          <i data-feather="bar-chart-2"></i>
+        </div>
         <h3>Frequency Analysis</h3>
         <p>Compare letter distributions against English baselines to identify substitution patterns with statistical confidence.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⚡</div>
+        <div class="feature-icon">
+          <i data-feather="zap"></i>
+        </div>
         <h3>Caesar Brute Force</h3>
         <p>Test all 26 shifts automatically and rank results by confidence score. Find the correct shift in seconds.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🗺️</div>
+        <div class="feature-icon">
+          <i data-feather="map"></i>
+        </div>
         <h3>Manual Cipher Mapping</h3>
         <p>Remap alphabet characters with live preview. Fine-tune your decryption hypothesis character by character.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🖥️</div>
+        <div class="feature-icon">
+          <i data-feather="monitor"></i>
+        </div>
         <h3>Standalone Windows EXE</h3>
         <p>No Python installation required. Click and run on any Windows machine — completely self-contained.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔒</div>
+        <div class="feature-icon">
+          <i data-feather="lock"></i>
+        </div>
         <h3>Fully Offline</h3>
         <p>Zero cloud dependency. Your data stays on your machine. Perfect for secure or air-gapped environments.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📈</div>
+        <div class="feature-icon">
+          <i data-feather="trending-up"></i>
+        </div>
         <h3>Visualization Tools</h3>
         <p>Matplotlib-powered histograms and charts for visual pattern recognition and data analysis.</p>
       </div>
@@ -1008,17 +1020,23 @@ footer a:hover {
     <p class="section-subtitle">Who benefits from CipherVision</p>
     <div class="usecases-grid">
       <div class="usecase-card">
-        <div class="usecase-icon">🎓</div>
+        <div class="usecase-icon">
+          <i data-feather="book-open"></i>
+        </div>
         <h3>Cryptography Students</h3>
         <p>Learn classical cipher analysis through hands-on experimentation. Visual feedback helps understand frequency patterns.</p>
       </div>
       <div class="usecase-card">
-        <div class="usecase-icon">🔬</div>
+        <div class="usecase-icon">
+          <i data-feather="shield"></i>
+        </div>
         <h3>Security Researchers</h3>
         <p>Quickly analyze encrypted text, test hypotheses, and validate decryption approaches with statistical tools.</p>
       </div>
       <div class="usecase-card">
-        <div class="usecase-icon">🏆</div>
+        <div class="usecase-icon">
+          <i data-feather="award"></i>
+        </div>
         <h3>CTF Players</h3>
         <p>Speed up your cryptanalysis workflow in capture-the-flag competitions. Solve cipher challenges faster.</p>
       </div>
@@ -1116,6 +1134,12 @@ footer a:hover {
     <p>© 2026 CipherVision Labs — Applied Cryptanalysis Research · <a href="https://github.com/ArvinFarrelP/CipherVision" target="_blank">GitHub</a> · MIT License</p>
   </div>
 </footer>
+
+<!-- 1. Feather Icons CDN dulu -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  feather.replace();
+</script>
 
 <script>
 // Copy button functionality
