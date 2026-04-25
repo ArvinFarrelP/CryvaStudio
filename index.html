@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>CipherVision Labs - Cryptanalysis Tool for Windows</title>
+<title>CipherVision Labs — Cryptanalysis Tool for Windows</title>
 <meta name="description" content="Download CipherVision Labs - Free cryptanalysis tool for classical cipher decryption. Frequency analysis, Caesar solver, manual cipher mapping.">
 <meta name="author" content="Arvin Farrel Pramuditya">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,15 +29,29 @@ body {
   padding: 0 24px;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0c10;
+}
+::-webkit-scrollbar-thumb {
+  background: #38bdf8;
+  border-radius: 10px;
+}
+
 /* Navbar */
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(10,12,16,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 16px 0;
+  background: rgba(10,12,16,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(56,189,248,0.15);
+  padding: 14px 0;
   z-index: 100;
+  transition: all 0.3s ease;
 }
 
 .navbar .container {
@@ -49,28 +63,51 @@ body {
 }
 
 .logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #fff 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .logo span {
-  color: #38bdf8;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
 .nav-links a {
   color: #94a3b8;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  transition: color 0.2s;
-  padding: 4px 0;
+  transition: all 0.2s;
+  padding: 6px 0;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .nav-links a:hover {
@@ -79,178 +116,253 @@ body {
 
 /* Hero */
 .hero {
-  padding: 60px 0 50px;
+  padding: 80px 0 60px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(56,189,248,0.08) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .badge {
-  display: inline-block;
-  background: rgba(56,189,248,0.12);
-  border: 1px solid rgba(56,189,248,0.2);
-  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(56,189,248,0.08);
+  border: 1px solid rgba(56,189,248,0.25);
+  padding: 6px 16px;
   border-radius: 100px;
   font-size: 0.7rem;
   font-weight: 500;
   color: #38bdf8;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(4px);
+}
+
+.badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #34d399;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
 }
 
 h1 {
-  font-size: clamp(1.8rem, 8vw, 3rem);
+  font-size: clamp(2rem, 8vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
   line-height: 1.2;
 }
 
 h1 span {
-  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  background: linear-gradient(135deg, #38bdf8, #a855f7, #38bdf8);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 .subtitle {
-  font-size: clamp(0.9rem, 4vw, 1.125rem);
+  font-size: clamp(0.95rem, 4vw, 1.1rem);
   color: #94a3b8;
   max-width: 600px;
-  margin: 0 auto 28px;
+  margin: 0 auto 32px;
   padding: 0 16px;
+  line-height: 1.7;
 }
 
 /* Buttons */
 .buttons {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   padding: 0 16px;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: 10px;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-decoration: none;
-  transition: all 0.2s;
-  white-space: nowrap;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
 }
 
 .btn-primary {
-  background: #38bdf8;
-  color: #0a0c10;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(56,189,248,0.3);
 }
 
 .btn-primary:hover {
-  background: #2b9ed3;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(56,189,248,0.4);
 }
 
 .btn-secondary {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.12);
   color: #edf2f7;
+  backdrop-filter: blur(4px);
 }
 
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.05);
-  transform: translateY(-2px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(56,189,248,0.3);
+  transform: translateY(-3px);
 }
 
 /* Stats */
 .stats {
   display: flex;
   justify-content: center;
-  gap: 32px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  gap: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
   margin-top: 16px;
   flex-wrap: wrap;
 }
 
 .stat {
   text-align: center;
-  min-width: 70px;
+  transition: all 0.2s ease;
+}
+
+.stat:hover {
+  transform: translateY(-3px);
 }
 
 .stat-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #38bdf8;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .stat-label {
   font-size: 0.7rem;
   color: #64748b;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-/* Installation */
+/* Installation Section */
 .installation {
-  padding: 50px 0;
+  padding: 60px 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(56,189,248,0.02) 100%);
 }
 
 .section-title {
   text-align: center;
-  font-size: clamp(1.5rem, 6vw, 1.75rem);
+  font-size: clamp(1.6rem, 6vw, 2rem);
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
-/* Code Block Style */
+.section-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 48px;
+}
+
+/* Code Block Style - Enhanced */
 .code-block {
-  background: #080d18;
-  border: 1px solid rgba(0,245,255,0.12);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #080d18 0%, #0a0f1a 100%);
+  border: 1px solid rgba(56,189,248,0.15);
+  border-radius: 16px;
   overflow: hidden;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.code-block:hover {
+  border-color: rgba(56,189,248,0.3);
+  box-shadow: 0 12px 30px rgba(56,189,248,0.1);
+  transform: translateY(-2px);
 }
 
 .code-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
-  background: rgba(0,245,255,0.04);
-  border-bottom: 1px solid rgba(0,245,255,0.12);
+  padding: 0.7rem 1.2rem;
+  background: rgba(56,189,248,0.05);
+  border-bottom: 1px solid rgba(56,189,248,0.1);
   flex-wrap: wrap;
   gap: 8px;
 }
 
 .code-lang {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  color: #00f5ff;
+  font-size: 0.65rem;
+  color: #60a5fa;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .code-dots {
   display: flex;
-  gap: 5px;
+  gap: 8px;
 }
 
 .code-dot {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
+  transition: all 0.2s ease;
 }
 
 .code-dot.r { background: #ff5f57; }
 .code-dot.y { background: #febc2e; }
 .code-dot.g { background: #28c840; }
 
+.code-dot:hover {
+  transform: scale(1.2);
+}
+
 pre {
-  padding: 1rem;
+  padding: 1.2rem;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #a5b4fc;
-  line-height: 1.7;
+  line-height: 1.8;
   overflow-x: auto;
   margin: 0;
   white-space: pre-wrap;
@@ -259,108 +371,125 @@ pre {
 
 @media (min-width: 640px) {
   pre {
-    font-size: 0.8rem;
-    padding: 1.2rem 1.3rem;
+    font-size: 0.82rem;
+    padding: 1.4rem;
   }
 }
 
-pre .comment { color: #64748b; }
-pre .cmd { color: #00f5ff; }
-pre .arg { color: #b042ff; }
-pre .str { color: #00ff88; }
+pre .comment { color: #5a6a8a; font-style: italic; }
+pre .cmd { color: #60a5fa; font-weight: 500; }
+pre .arg { color: #c084fc; }
+pre .str { color: #34d399; }
 pre .output { color: #fbbf24; }
 
 /* Sample Cipher */
 .sample-cipher {
-  background: #080d18;
-  border: 1px solid rgba(0,245,255,0.12);
-  border-radius: 12px;
-  padding: 1rem;
+  background: linear-gradient(135deg, #080d18 0%, #0e1220 100%);
+  border: 1px solid rgba(56,189,248,0.15);
+  border-radius: 16px;
+  padding: 1.2rem;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: #00f5ff;
-  line-height: 1.8;
+  font-size: 0.75rem;
+  color: #a5b4fc;
+  line-height: 1.9;
   letter-spacing: 0.02em;
   margin-top: 1rem;
   overflow-x: auto;
   word-break: break-word;
+  position: relative;
 }
 
 @media (min-width: 640px) {
   .sample-cipher {
-    font-size: 0.82rem;
-    padding: 1.3rem 1.5rem;
+    font-size: 0.85rem;
+    padding: 1.5rem;
   }
+}
+
+.sample-cipher::before {
+  content: '▶';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #34d399;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.sample-cipher {
+  padding-left: 2rem;
 }
 
 .section-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  color: #b042ff;
-  letter-spacing: 0.25em;
+  font-size: 0.65rem;
+  color: #818cf8;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex-wrap: wrap;
 }
 
 .section-label::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: rgba(0,245,255,0.12);
-  min-width: 40px;
+  background: linear-gradient(90deg, rgba(56,189,248,0.3), transparent);
 }
 
 /* CTA */
 .cta {
-  padding: 50px 0;
+  padding: 60px 0;
   text-align: center;
-  background: #0e1015;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(56,189,248,0.02) 0%, transparent 100%);
+  border-top: 1px solid rgba(255,255,255,0.04);
 }
 
 .cta h2 {
-  font-size: clamp(1.3rem, 6vw, 1.75rem);
-  font-weight: 700;
-  margin-bottom: 12px;
-  padding: 0 16px;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 .cta p {
   color: #94a3b8;
-  margin-bottom: 28px;
-  font-size: 0.9rem;
-  padding: 0 16px;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
 }
 
 .cta .btn {
-  white-space: normal;
-  word-break: keep-all;
+  padding: 14px 32px;
+  font-size: 0.9rem;
 }
 
 /* Footer */
 footer {
-  padding: 24px 0;
+  padding: 32px 0;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #64748b;
+  border-top: 1px solid rgba(255,255,255,0.04);
 }
 
-footer .container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
+footer a {
+  color: #38bdf8;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #60a5fa;
+  text-decoration: underline;
 }
 
 /* Responsive Breakpoints */
 @media (max-width: 640px) {
   .container {
-    padding: 0 16px;
+    padding: 0 20px;
   }
   
   .navbar .container {
@@ -370,7 +499,7 @@ footer .container {
   
   .nav-links {
     justify-content: center;
-    gap: 16px;
+    gap: 20px;
   }
   
   .buttons {
@@ -380,24 +509,14 @@ footer .container {
   
   .btn {
     justify-content: center;
-    white-space: normal;
-    text-align: center;
   }
   
   .stats {
-    gap: 20px;
+    gap: 28px;
   }
   
   .stat {
-    min-width: 60px;
-  }
-  
-  .stat-value {
-    font-size: 1.1rem;
-  }
-  
-  .stat-label {
-    font-size: 0.65rem;
+    min-width: 65px;
   }
   
   .code-header {
@@ -408,19 +527,15 @@ footer .container {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 0 35px;
+    padding: 50px 0 40px;
   }
   
   .installation {
-    padding: 35px 0;
-  }
-  
-  .section-title {
-    margin-bottom: 30px;
+    padding: 40px 0;
   }
   
   .stats {
-    gap: 16px;
+    gap: 20px;
   }
   
   .stat {
@@ -428,43 +543,32 @@ footer .container {
   }
   
   pre {
-    font-size: 0.65rem;
-    padding: 0.8rem;
+    font-size: 0.68rem;
+    padding: 0.9rem;
   }
   
   .sample-cipher {
-    font-size: 0.65rem;
-    padding: 0.8rem;
+    font-size: 0.68rem;
+    padding: 0.9rem 0.9rem 0.9rem 1.8rem;
   }
 }
 
 @media (max-width: 360px) {
   .nav-links {
-    gap: 12px;
+    gap: 14px;
   }
   
   .nav-links a {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
   
   .badge {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+    padding: 4px 12px;
   }
   
   h1 {
-    font-size: 1.6rem;
-  }
-  
-  .stat {
-    min-width: 50px;
-  }
-  
-  .stat-value {
-    font-size: 1rem;
-  }
-  
-  .stat-label {
-    font-size: 0.6rem;
+    font-size: 1.7rem;
   }
 }
 </style>
@@ -486,7 +590,7 @@ footer .container {
   <div class="container">
     <div class="badge">Free & Open Source</div>
     <h1>Crack Classical Ciphers<br>with <span>CipherVision Labs</span></h1>
-    <p class="subtitle">A complete cryptanalysis tool for Windows — frequency analysis, Caesar brute force, and manual cipher mapping.</p>
+    <p class="subtitle">A complete cryptanalysis tool for Windows — frequency analysis, Caesar brute force, and manual cipher mapping. No setup required.</p>
     <div class="buttons">
       <a href="https://github.com/ArvinFarrelP/CipherVision/releases/tag/v1.0.0" target="_blank" class="btn btn-primary">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.97a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.779a.749.749 0 1 1 1.06-1.06l1.97 1.97Z"/></svg>
@@ -517,6 +621,7 @@ footer .container {
 <section id="install" class="installation">
   <div class="container">
     <h2 class="section-title">Installation & Usage</h2>
+    <p class="section-subtitle">Get started with CipherVision in minutes</p>
 
     <div class="code-block">
       <div class="code-header">
@@ -572,7 +677,7 @@ footer .container {
 <section id="download" class="cta">
   <div class="container">
     <h2>Ready to start decrypting?</h2>
-    <p>Free, open source, and runs entirely offline.</p>
+    <p>Free, open source, and runs entirely offline. Download now and begin your cryptanalysis journey.</p>
     <a href="https://github.com/ArvinFarrelP/CipherVision/releases/tag/v1.0.0" target="_blank" class="btn btn-primary">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.97a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.779a.749.749 0 1 1 1.06-1.06l1.97 1.97Z"/></svg>
       Download CipherVision v1.0.0
@@ -582,7 +687,7 @@ footer .container {
 
 <footer>
   <div class="container">
-    <p>CipherVision Labs by Arvin Farrel Pramuditya · MIT License · <a href="https://github.com/ArvinFarrelP/CipherVision" style="color:#38bdf8;">GitHub</a></p>
+    <p>© 2024 CipherVision Labs by Arvin Farrel Pramuditya · <a href="https://github.com/ArvinFarrelP/CipherVision" target="_blank">GitHub</a> · MIT License</p>
   </div>
 </footer>
 
